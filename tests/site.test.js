@@ -94,3 +94,35 @@ test('adds progressive navigation and image preview behavior while keeping conte
   assert.equal((html.match(/<article class="project/g) || []).length, 5);
   assert.doesNotMatch(html, /onclick=|style=/i);
 });
+
+test('references only the reviewed local evidence asset allowlist', () => {
+  const html = read('index.html');
+  const expected = [
+    'favicon.svg',
+    'inbox-priority-alert.png',
+    'lead-rescue-workflow.png',
+    'rabbitmq-architecture.png',
+    'telegram-actions.png',
+  ];
+  const actual = fs.readdirSync(path.join(root, 'assets')).sort();
+  assert.deepEqual(actual, expected);
+  for (const asset of expected) assert.match(html, new RegExp(`assets/${asset.replace('.', '\\.')}`));
+  assert.doesNotMatch(html, /inbox-workflow\.png/);
+});
+
+test('all public PNG evidence is valid, substantial, and has descriptive alt text', () => {
+  const html = read('index.html');
+  const images = [...html.matchAll(/<img\s+[^>]*src="([^"]+)"[^>]*alt="([^"]*)"[^>]*>/g)];
+  assert.equal(images.length, 5);
+  for (const match of images) {
+    const [, src, alt] = match;
+    assert.ok(alt.trim().length >= 18, `${src} needs useful alt text`);
+    const file = path.join(root, src);
+    assert.ok(fs.existsSync(file), `${src} is missing`);
+    const buffer = fs.readFileSync(file);
+    assert.equal(buffer.subarray(1, 4).toString(), 'PNG', `${src} is not a PNG`);
+    const width = buffer.readUInt32BE(16);
+    const height = buffer.readUInt32BE(20);
+    assert.ok(width >= 500 && height >= 500, `${src} is too small for portfolio use`);
+  }
+});
