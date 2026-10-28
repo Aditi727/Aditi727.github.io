@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automation Portfolio | AI &amp; Automation Workflow Developer</title>
+  <meta name="description" content="Practical n8n automation, AI workflows, APIs, webhooks, Gmail, Google Sheets, Telegram and event-driven integrations.">
+  <meta name="theme-color" content="#102a2a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Automation Portfolio">
+  <meta property="og:site_name" content="Automation Portfolio">
+  <meta property="og:description" content="Practical automation systems built with n8n, APIs, AI, Google Workspace, Telegram and event-driven architecture.">
+  <meta property="og:image" content="assets/lead-rescue-workflow.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Automation Portfolio home">
+        <span class="brand-mark" aria-hidden="true">AP</span>
+        <span>Automation Portfolio</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#process">Process</a>
+        <a href="#stack">Stack</a>
+        <a class="nav-github" href="https://github.com/Aditi727" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">AI &amp; Automation Workflow Developer</p>
+        <h1 id="hero-title">Automation Portfolio</h1>
+        <p class="hero-copy">I build and test practical automation systems that connect business tools, APIs and AI, with reliability controls such as validation, duplicate protection, structured outputs and human review.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore projects</a>
+          <a class="button button-secondary" href="https://github.com/Aditi727" target="_blank" rel="noreferrer">View GitHub</a>
+        </div>
+        <ul class="capability-tags" aria-label="Core capabilities">
+          <li>n8n</li>
+          <li>API Integration</li>
+          <li>Webhooks</li>
+          <li>Gemini / AI Workflows</li>
+          <li>Event-Driven Systems</li>
+        </ul>
+      </div>
+      <a class="hero-next" href="#capability">See how the systems are built <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="section capability" id="capability" aria-labelledby="capability-title">
+      <div class="section-shell capability-grid">
+        <div>
+          <p class="section-kicker">Capability</p>
+          <h2 id="capability-title">Automation that handles the difficult paths</h2>
+        </div>
+        <div class="capability-copy">
+          <p>These projects go beyond connecting two tools. They validate inputs, normalize data, prevent repeat side effects, constrain AI outputs, preserve human approval where needed, and make failures visible.</p>
+          <p>The work is demonstrated with synthetic portfolio data and documented verification boundaries. No client deployment or unsupported result is claimed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <div class="section-shell">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Featured work</p>
+            <h2 id="projects-title">Five systems, each built around a real operational problem</h2>
+          </div>
+          <p>Every project below is grounded in repository tests, live synthetic evidence, or a clearly labelled Demo Mode acceptance run.</p>
+        </div>
+
+        <div class="project-list">
+          <article class="project" data-project="lead-rescue">
+            <figure class="project-media project-media-workflow">
+              <img src="assets/lead-rescue-workflow.png" alt="Full n8n lead response workflow with Google Sheets, Gemini, Telegram, claim and SLA branches" loading="lazy" width="1600" height="1600">
+              <figcaption>33-node lead response and SLA architecture</figcaption>
+            </figure>
+            <div class="project-body">
+              <div class="project-meta"><span>Live-tested portfolio workflow</span><span>n8n + Gemini</span></div>
+              <h3>AI Lead Response &amp; SLA Automation</h3>
+              <p class="project-problem"><strong>Problem:</strong> Spreadsheet leads can wait unnoticed, lack ownership, and create duplicate notifications.</p>
+              <p><strong>Solution:</strong> A Google Sheets-triggered workflow validates and qualifies leads, routes hot opportunities to Telegram, supports signed claim actions, and escalates missed response windows.</p>
+              <ul class="feature-list">
+                <li>Gemini category, priority, score and next action</li>
+                <li>Hot-lead routing and concise Telegram alerts</li>
+                <li>Signed CLAIM LEAD webhook with duplicate protection</li>
+                <li>Five-minute SLA monitoring and missed-SLA escalation</li>
+                <li>Google Sheets processing and claim-state tracking</li>
+              </ul>
+              <p class="architecture"><span>Architecture</span> Sheets trigger → validation → Gemini → Telegram → claim/SLA state machine</p>
+              <div class="tech-row"><span>n8n</span><span>Gemini</span><span>Google Sheets</span><span>Telegram</span><span>HMAC</span></div>
+            </div>
+          </article>
+
+          <article class="project project-reverse" data-project="telegram-ops">
+            <figure class="project-media">
+              <img src="assets/telegram-actions.png" alt="Telegram CRM search result with Approve, Reject, Assign to me and Close action buttons" loading="lazy" width="993" height="690">
+              <figcaption>Search and role-checked inline business actions</figcaption>
+            </figure>
+            <div class="project-body">
+              <div class="project-meta"><span>Live-tested portfolio workflow</span><span>Conversational operations</span></div>
+              <h3>Telegram AI Operations &amp; CRM Assistant</h3>
+              <p class="project-problem"><strong>Problem:</strong> Small operations teams need a fast interface for finding records, changing state and reviewing current workload.</p>
+              <p><strong>Solution:</strong> Telegram becomes a controlled CRM operations interface with deterministic commands, Gemini intent routing, persistent Sheets records and auditable actions.</p>
+              <ul class="feature-list">
+                <li>Validated add, search, report and status commands</li>
+                <li>Natural-language search and reporting through Gemini</li>
+                <li>Approve, Reject, Assign to me and Close actions</li>
+                <li>Admin/operator authorization and actor audit trail</li>
+                <li>Duplicate prevention and AI fallback handling</li>
+              </ul>
+              <p class="architecture"><span>Architecture</span> Telegram → authorization → command/AI router → Sheets records + audit → reply</p>
+              <div class="tech-row"><span>n8n</span><span>Telegram</span><span>Gemini</span><span>Google Sheets</span></div>
+            </div>
+          </article>
+
+          <article class="project" data-project="inbox-assistant">
+            <figure class="project-media project-media-wide">
+              <img src="assets/inbox-workflow.png" alt="Full n8n executive inbox workflow with Gmail, Gemini, draft, labels, audit and SLA branches" loading="lazy" width="3210" height="1440">
+              <figcaption>Gmail triage, human review and SLA workflow</figcaption>
+            </figure>
+            <div class="project-body">
+              <div class="project-meta"><span>Synthetic live acceptance passed</span><span>Human-in-the-loop</span></div>
+              <h3>AI Executive Inbox &amp; Human Approval Assistant</h3>
+              <p class="project-problem"><strong>Problem:</strong> Important leads, incidents, billing questions and deadlines can disappear inside a busy inbox.</p>
+              <p><strong>Solution:</strong> Gmail messages are triaged with bounded thread context, structured Gemini analysis, deterministic risk checks, labels, an operations log and Telegram escalation.</p>
+              <ul class="feature-list">
+                <li>Category, priority, impact, action and deadline extraction</li>
+                <li>Threaded Gmail drafts for human review only</li>
+                <li>No automatic external email sending</li>
+                <li>Gmail labels, Sheets audit and priority alerts</li>
+                <li>Replay protection and SLA escalation suppression</li>
+              </ul>
+              <p class="architecture"><span>Architecture</span> Gmail → thread context → Gemini → safety gate → draft/labels/audit → SLA watchdog</p>
+              <div class="tech-row"><span>n8n</span><span>Gmail</span><span>Gemini</span><span>Google Sheets</span><span>Telegram</span></div>
+            </div>
+          </article>
+
+          <article class="project project-compact" data-project="webhook-crm">
+            <div class="project-diagram" role="img" aria-label="Webhook intake architecture from authenticated request through validation, routing and controlled response">
+              <span>Webhook</span><b aria-hidden="true">→</b><span>Validate</span><b aria-hidden="true">→</b><span>Idempotency</span><b aria-hidden="true">→</b><span>Route</span><b aria-hidden="true">→</b><span>Respond</span>
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Tested portfolio demo</span><span>API contract</span></div>
+              <h3>Webhook Lead Intake &amp; Multi-Channel CRM</h3>
+              <p class="project-problem"><strong>Problem:</strong> External lead and support events need predictable validation, routing, duplicate handling and caller responses.</p>
+              <p><strong>Solution:</strong> An authenticated JSON webhook normalizes requests, rejects invalid events before side effects, routes accepted work and returns explicit HTTP outcomes.</p>
+              <ul class="feature-list">
+                <li>Shared-header authentication and event allowlist</li>
+                <li>Required-field and email validation</li>
+                <li>Event ID idempotency and duplicate response path</li>
+                <li>CRM-style audit preparation and team alerts</li>
+              </ul>
+              <p class="architecture"><span>Architecture</span> Webhook → auth/validation → idempotency → routing → audit/notifications → HTTP response</p>
+              <div class="tech-row"><span>n8n</span><span>Webhooks</span><span>REST APIs</span><span>JavaScript</span></div>
+            </div>
+          </article>
+
+          <article class="project project-reverse" data-project="rabbitmq-ops">
+            <figure class="project-media project-media-wide">
+              <img src="assets/rabbitmq-architecture.png" alt="Event-driven customer operations architecture with Fastify API, RabbitMQ worker, review, retry, dead-letter and persistence paths" loading="lazy" width="1600" height="900">
+              <figcaption>Verified Demo Mode event-processing architecture</figcaption>
+            </figure>
+            <div class="project-body">
+              <div class="project-meta"><span class="status-demo">Verified Demo Mode</span><span>64 automated tests</span></div>
+              <h3>AI Event-Driven Customer Operations</h3>
+              <p class="project-problem"><strong>Problem:</strong> Synchronous integrations can lose work, repeat side effects or block callers when AI and CRM services are slow or unavailable.</p>
+              <p><strong>Solution:</strong> A Fastify API accepts events quickly while a RabbitMQ worker performs structured analysis, human-review routing, retry recovery and protected replay with persistent SQLite state.</p>
+              <ul class="feature-list">
+                <li>Separate API and worker processes with correlation IDs</li>
+                <li>Three TTL retry tiers, DLQ and atomic replay</li>
+                <li>Idempotency, worker leases and status history</li>
+                <li>Low-confidence human-review queue</li>
+                <li>Docker Compose acceptance with real RabbitMQ</li>
+              </ul>
+              <p class="project-boundary"><strong>Verification boundary:</strong> Demo Mode passed end to end; live OpenAI and HubSpot validation remains pending credentials.</p>
+              <p class="architecture"><span>Architecture</span> REST API → RabbitMQ → worker → review/retry/DLQ → persistent state</p>
+              <div class="tech-row"><span>Node.js</span><span>Fastify</span><span>RabbitMQ</span><span>SQLite</span><span>Docker</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="process" aria-labelledby="process-title">
+      <div class="section-shell">
+        <p class="section-kicker">How I build</p>
+        <h2 id="process-title">From business process to tested automation</h2>
+        <ol class="process-list">
+          <li><span>01</span><h3>Understand</h3><p>Identify the real operational problem, actors, decisions and success boundary.</p></li>
+          <li><span>02</span><h3>Map</h3><p>Define data contracts, tools, APIs, credentials and human approval points.</p></li>
+          <li><span>03</span><h3>Control</h3><p>Add validation, normalization, idempotency, retries and explicit failure paths.</p></li>
+          <li><span>04</span><h3>Automate</h3><p>Implement the smallest maintainable workflow around the verified process.</p></li>
+          <li><span>05</span><h3>Prove</h3><p>Run synthetic end-to-end tests, inspect actual state and document limitations.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section stack" id="stack" aria-labelledby="stack-title">
+      <div class="section-shell stack-layout">
+        <div>
+          <p class="section-kicker">Technology</p>
+          <h2 id="stack-title">Tools demonstrated in the portfolio</h2>
+          <p>Selected for the workflow, not for a longer technology list.</p>
+        </div>
+        <ul class="stack-list" aria-label="Demonstrated technologies">
+          <li>n8n</li><li>JavaScript</li><li>Node.js</li><li>REST APIs</li><li>Webhooks</li><li>Gemini</li><li>Google Sheets</li><li>Gmail</li><li>Telegram</li><li>RabbitMQ</li><li>Git / GitHub</li><li>Docker</li>
+        </ul>
+        <p class="learning-note"><strong>In progress:</strong> Currently expanding CRM automation skills with HubSpot and GoHighLevel.</p>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="section-shell contact-layout">
+        <div>
+          <p class="section-kicker">Work with me</p>
+          <h2 id="contact-title">Need a workflow that connects systems reliably?</h2>
+        </div>
+        <div>
+          <p>Explore the public GitHub profile for code and project material as it becomes available. Private credentials, runtime data and internal automation repositories are never published.</p>
+          <a class="button button-dark" href="https://github.com/Aditi727" target="_blank" rel="noreferrer">View public GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-layout">
+      <p><strong>Automation Portfolio</strong><br>Practical AI, API and workflow automation.</p>
+      <p>Built as a privacy-safe public portfolio using verified synthetic project evidence.</p>
+    </div>
+  </footer>
+
+  <dialog class="image-dialog" aria-label="Project screenshot preview">
+    <button class="dialog-close" type="button" aria-label="Close image preview">Close</button>
+    <img src="assets/lead-rescue-workflow.png" alt="">
+    <p></p>
+  </dialog>
+</body>
+</html>
