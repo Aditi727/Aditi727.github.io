@@ -68,3 +68,29 @@ test('documents the public-only repository boundary', () => {
   assert.match(readme, /private automation repository is not published/i);
   assert.match(readme, /RabbitMQ.*Demo Mode/is);
 });
+
+test('provides a responsive accessible visual system without gradients or remote fonts', () => {
+  const css = read('styles.css');
+  const html = read('index.html');
+  assert.match(css, /--radius:\s*8px/);
+  assert.match(css, /:focus-visible/);
+  assert.match(css, /@media\s*\(max-width:\s*980px\)/);
+  assert.match(css, /@media\s*\(max-width:\s*680px\)/);
+  assert.match(css, /@media\s*\(prefers-reduced-motion:\s*reduce\)/);
+  assert.match(css, /max-width:\s*100%/);
+  assert.match(css, /min-height:\s*clamp\(/);
+  assert.doesNotMatch(css, /gradient\(/i);
+  assert.doesNotMatch(html, /fonts\.(googleapis|gstatic)\.com/i);
+});
+
+test('adds progressive navigation and image preview behavior while keeping content in HTML', () => {
+  const js = read('script.js');
+  const html = read('index.html');
+  assert.match(js, /aria-expanded/);
+  assert.match(js, /showModal/);
+  assert.match(js, /Escape/);
+  assert.match(html, /<button class="nav-toggle"[^>]+aria-controls="nav-links"/);
+  assert.match(html, /<dialog class="image-dialog"/);
+  assert.equal((html.match(/<article class="project/g) || []).length, 5);
+  assert.doesNotMatch(html, /onclick=|style=/i);
+});
