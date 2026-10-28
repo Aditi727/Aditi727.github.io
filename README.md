@@ -2,6 +2,8 @@
 
 A privacy-safe static GitHub Pages portfolio for verified n8n, AI, API, Google Workspace, Telegram and event-driven automation work.
 
+Public site: [aditi727.github.io/automation-portfolio](https://aditi727.github.io/automation-portfolio/)
+
 This public repository contains only the website and reviewed synthetic portfolio evidence. The private automation repository is not published, and no workflow credentials, runtime state, account data or private source files are included.
 
 ## Verification boundaries

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aditi727.github.io/automation-portfolio/sitemap.xml

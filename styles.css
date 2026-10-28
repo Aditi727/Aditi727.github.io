@@ -910,3 +910,18 @@ a {
     animation-iteration-count: 1 !important;
   }
 }
+
+.not-found {
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  justify-items: start;
+  gap: 1rem;
+  width: min(100% - 2rem, 42rem);
+  margin-inline: auto;
+}
+
+.not-found h1,
+.not-found p {
+  margin: 0;
+}
