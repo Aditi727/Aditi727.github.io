@@ -5,7 +5,7 @@ const path = require('node:path');
 const test = require('node:test');
 
 const root = path.resolve(__dirname, '..');
-const canonical = 'https://aditi727.github.io/automation-portfolio/';
+const canonical = 'https://aditi727.github.io/';
 
 function walk(directory, files = []) {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
@@ -37,10 +37,11 @@ test('GitHub Pages metadata and fallback paths use the exact public HTTPS URL', 
   const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
   assert.match(html, new RegExp(`<link rel="canonical" href="${canonical}">`));
   assert.match(html, new RegExp(`<meta property="og:url" content="${canonical}">`));
-  assert.match(html, /<meta property="og:image" content="https:\/\/aditi727\.github\.io\/automation-portfolio\/assets\/lead-rescue-workflow\.png">/);
-  assert.match(notFound, /href="\/automation-portfolio\/"/);
-  assert.match(robots, /Sitemap: https:\/\/aditi727\.github\.io\/automation-portfolio\/sitemap\.xml/);
-  assert.match(sitemap, /<loc>https:\/\/aditi727\.github\.io\/automation-portfolio\/<\/loc>/);
+  assert.match(html, /<meta property="og:image" content="https:\/\/aditi727\.github\.io\/assets\/lead-rescue-workflow\.png">/);
+  assert.match(notFound, /href="\/"/);
+  assert.match(robots, /Sitemap: https:\/\/aditi727\.github\.io\/sitemap\.xml/);
+  assert.match(sitemap, /<loc>https:\/\/aditi727\.github\.io\/<\/loc>/);
+  assert.doesNotMatch([html, notFound, robots, sitemap].join('\n'), /\/automation-portfolio\//);
   assert.ok(fs.existsSync(path.join(root, '.nojekyll')));
 });
 
